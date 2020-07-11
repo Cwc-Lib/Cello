@@ -1,6 +1,7 @@
 ;Register Cwc before using a .cwmake
 >
 -{_sOpt}="O3"
+-{dFlags}=-DCELLO_NDEBUG
 >
 -{_sDynamic}="dll"
 >

@@ -1,6 +1,7 @@
 ;Register Cwc before using a .cwmake
 >
 -{_sOpt}="OS"
+-{dFlags}=-DCELLO_NDEBUG
 >
 -{_sDynamic}="so"
 >
