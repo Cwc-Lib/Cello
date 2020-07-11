@@ -1,28 +1,5 @@
-# Main
-*.log
-*~
-*.libs
-*.o
-*.la
-*.so*
-*.a
-*.lo
-*.dll
-*.exe
-*.gz
-*.class
-
-# Tests
-test.bin
-test.txt
-test.exe
-test
-
-# Benchmarking
-profile.txt
-
-# Dist
-libCello*
-
-# VIM related
-.clang_complete
+Build/
+imgui.ini
+obj/
+_out/
+*.wdat
