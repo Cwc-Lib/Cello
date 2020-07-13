@@ -2,6 +2,7 @@
 >
 -{_sOpt}="O2"
 -{dFlags}=-DCELLO_NDEBUG
+-{vLib}= -lDbghelp
 >
 -{_sDynamic}="dll"
 >

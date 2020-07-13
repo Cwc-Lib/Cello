@@ -1,6 +1,7 @@
 ;Register Cwc before using a .cwmake
 >
 -{_sOpt}="Debug"
+-{vLib}= -lDbghelp
 >
 -{_sDynamic}="dll"
 >

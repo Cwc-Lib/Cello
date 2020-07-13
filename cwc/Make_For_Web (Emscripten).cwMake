@@ -1,9 +1,10 @@
 ;Register Cwc before using a .cwmake
 >
--{_sOpt}="OS"
--{dFlags}=-DCELLO_NDEBUG
+;-{_sOpt}="OS"
+-{_sOpt}="Debug"
+-{dFlags}=-DCELLO_EMSC -DCELLO_NDEBUG -DCELLO_NSTRACE
 >
 -{_sDynamic}="so"
 >
--#Run Build.cwc -{_wToolchain}= "VLianceTool/WebRT"
+-#Run Build_Emsc.cwc -{_wToolchain}= "VLianceTool/WebRT"
 -{vPreloadRc}="--preload-file Rc/@Rc/"

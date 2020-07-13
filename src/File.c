@@ -397,9 +397,11 @@ static var Process_Open(var self, var filename, var access) {
   struct Process* p = self;
   
   if (p->proc isnt NULL) { Process_Close(self); }
-  
+  #if defined(CELLO_EMSC)
+  //TODO
+  #else
   p->proc = popen(c_str(filename), c_str(access));
-  
+  #endif
   if (p->proc is NULL) {
     throw(IOError, "Could not open process: %s", filename);
   }

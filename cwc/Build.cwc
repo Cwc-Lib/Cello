@@ -23,7 +23,7 @@
 -{vIncl}
 >
 ;Generate tests executable
--o  obj/cpp_{_sPlatform}_{_sOpt}/lib/ -o  obj/cpp_{_sPlatform}_{_sOpt}/tests/  -#To _out/{_sPlatform}_{_sOpt}/App.*  -lDbghelp
+-o  obj/cpp_{_sPlatform}_{_sOpt}/lib/ -o  obj/cpp_{_sPlatform}_{_sOpt}/tests/  -#To _out/{_sPlatform}_{_sOpt}/App.*  -{dFlags} -lDbghelp
 >
 -#Copy Rc/ _out/{_sPlatform}_{_sOpt}/
 >
@@ -32,49 +32,49 @@
 ;----- Generate examples -----
 >
 ;Example: threads
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/threads.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/threads.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/threads.o
 >
 -#Run
 >
 ;Example: cello_world
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/cello_world.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/cello_world.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/cello_world.o
 >
 -#Run
 >
 ;Example: help
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/help.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/help.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/help.o
 >
 -#Run
 >
 ;Example: iteration
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/iteration.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/iteration.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/iteration.o
 >
 -#Run
 >
 ;Example: newtype
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/newtype.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/newtype.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/newtype.o
 >
 -#Run
 >
 ;Example: object
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/object.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/object.*  -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/object.o
 >
 -#Run
 >
 ;Example: ranges
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/ranges.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/ranges.*  -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/ranges.o
 >
 -#Run
 >
 ;Example: table
- -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/table.*  -lDbghelp
+ -o  obj/cpp_{_sPlatform}_{_sOpt}/lib/    -#To  _out/{_sPlatform}_{_sOpt}/Examples/table.*   -{vLib}
  obj/cpp_{_sPlatform}_{_sOpt}/examples/table.o
 >
 -#Run

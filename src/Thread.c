@@ -409,7 +409,10 @@ static void Thread_Start(var self) {
 static void Thread_Stop(var self) {
   struct Thread* t = self;
   
-#if defined(CELLO_UNIX)
+#if defined(CELLO_EMSC)
+//TODO
+
+#elif defined(CELLO_UNIX)
   if (not t->thread) { return; }
   int err = pthread_kill(t->thread, SIGINT);
   if (err is EINVAL) { throw(ValueError, "Invalid Argument to Thread Stop"); }
