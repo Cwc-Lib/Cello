@@ -134,9 +134,11 @@ typedef void* var;
 
 #define is ==
 #define isnt !=
+#ifndef __cplusplus
 #define not !
 #define and &&
 #define or ||
+#endif
 #define in ,
 
 /* Declaration */
