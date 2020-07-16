@@ -6,7 +6,7 @@ struct Header* header(var self) {
 
 var header_init(var head, var type, int alloc) {
   
-  struct Header* self = head;
+  struct Header* self = (struct Header*)head;
   
   self->type = type;
   
@@ -113,10 +113,17 @@ static struct Method* Alloc_Methods(void) {
   
   return methods;
 }
-
+/*
+CInstance( Doc,
+  Alloc_Name,       Alloc_Brief,    Alloc_Description, 
+  Alloc_Definition, Alloc_Examples, Alloc_Methods);
+  
+var Alloc = Cello(Alloc, (var)&test);
+*/
 var Alloc = Cello(Alloc, Instance(Doc, 
   Alloc_Name,       Alloc_Brief,    Alloc_Description, 
   Alloc_Definition, Alloc_Examples, Alloc_Methods));
+
 
 enum {
   ALLOC_STANDARD,
@@ -126,12 +133,12 @@ enum {
   
 static var alloc_by(var type, int method) {
   
-  struct Alloc* a = type_instance(type, Alloc);
+  struct Alloc* a = (struct Alloc*)type_instance(type, Alloc);
   var self;
   if (a and a->alloc) {
     self = a->alloc();
   } else {
-    struct Header* head = calloc(1, sizeof(struct Header) + size(type));  
+    struct Header* head = (struct Header*)calloc(1, sizeof(struct Header) + size(type));  
 
 #if CELLO_MEMORY_CHECK == 1
     if (head is NULL) {

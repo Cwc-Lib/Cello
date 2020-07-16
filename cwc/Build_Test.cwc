@@ -1,0 +1,27 @@
+-{vFlag}=""
+;-D_PLATFORM_WINDOWS
+>
+-{vIncl}=
+-I ../include/ 
+>
+;Build Cello
+-c ../src/ -o obj/cpp_{_sPlatform}_{_sOpt}/lib/Cello/ -{dFlags}
+-{vIncl}
+>
+;Generate Dynamic Lib
+;-o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/Cello.{_sDynamic}
+>
+;Generate Static Lib
+-o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/Cello.a
+>
+;Build Main Tests
+-c ../tests/ -o obj/cpp_{_sPlatform}_{_sOpt}/tests/  -{dFlags}
+-{vIncl}
+>
+;Generate tests executable
+-o  obj/cpp_{_sPlatform}_{_sOpt}/lib/ -o  obj/cpp_{_sPlatform}_{_sOpt}/tests/  -#To _out/{_sPlatform}_{_sOpt}/App.*  -{dFlags}   -{vLib} 
+>
+-#Copy Rc/ _out/{_sPlatform}_{_sOpt}/
+>
+-#Run
+>

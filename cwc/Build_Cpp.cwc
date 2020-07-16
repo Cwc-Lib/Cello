@@ -1,0 +1,18 @@
+-{vFlag}=""
+;-D_PLATFORM_WINDOWS
+>
+-{vIncl}=
+-I ../include/ 
+-I ../src/ 
+>
+;Build Cpp Cello
+-c cpp/ -o objcpp/cpp_{_sPlatform}_{_sOpt}/lib/Cello/ -{dFlags}
+-{vIncl}
+>
+;Generate tests executable
+-o  objcpp/cpp_{_sPlatform}_{_sOpt}/lib/   -#To _outcpp/{_sPlatform}_{_sOpt}/App.*  -{dFlags} -{vLib}
+>
+-#Copy Rc/ _outcpp/{_sPlatform}_{_sOpt}/
+>
+-#Run
+>

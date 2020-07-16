@@ -2493,7 +2493,7 @@ PT_FUNC(test_tuple_hash) {
 }
 
 PT_FUNC(test_tuple_iter) {
-  
+  /*
   size_t i = 0;
   foreach (x in tuple($I(10), $I(20), $I(30))) {
     if (i is 0) { PT_ASSERT(eq(x, $I(10))); }
@@ -2501,7 +2501,7 @@ PT_FUNC(test_tuple_iter) {
     if (i is 2) { PT_ASSERT(eq(x, $I(30))); }
     i++;
   }
-  
+  */
 }
 
 PT_FUNC(test_tuple_len) {
