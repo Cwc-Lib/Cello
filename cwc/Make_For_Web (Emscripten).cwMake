@@ -2,7 +2,7 @@
 >
 -{_sOpt}="OS"
 ;-{_sOpt}="Debug"
--{dFlags}=-DCELLO_EMSC -DCELLO_NDEBUG -DCELLO_NSTRACE
+-{dFlags}=-DCELLO_EMSC -DCELLO_NDEBUG -DCELLO_NSTRACE -DCELLO_NGC
 >
 -{_sDynamic}="so"
 >
