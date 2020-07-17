@@ -15,7 +15,7 @@
 -o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/Cello.a
 >
 ;Build Main Tests
--c ../tests/ -o obj/cpp_{_sPlatform}_{_sOpt}/tests/  -{dFlags}
+-c ../testsEmsc/ -o obj/cpp_{_sPlatform}_{_sOpt}/tests/  -{dFlags}
 -{vIncl}
 >
 ;Build Example
