@@ -1,6 +1,0 @@
-;Register Cwc before using a .cwmake
->
--{_sOpt}="Debug"
--{vLib}= -nodefaultlibs  -nostdlib   -nostartfiles  -lDbghelp  -lmsvcrt 
->
--#Run Build_Emsc.cwc -{_wToolchain}= VLianceTool/CpcDosRT[NoStdLib]

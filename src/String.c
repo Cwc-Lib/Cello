@@ -367,12 +367,12 @@ static int String_Format_To(var self, int pos, const char* fmt, va_list va) {
 #endif
 
 }
-/*
+
 static int String_Format_From(var self, int pos, const char* fmt, va_list va) {
   struct String* s = self;
   return vsscanf(s->val + pos, fmt, va);
 }
-*/
+
 static int String_Show(var self, var out, int pos) {
   struct String* s = self;
   pos = print_to(out, pos, "\"", self);
@@ -456,6 +456,6 @@ var String = Cello(String,
   Instance(Resize,  String_Resize),
   Instance(Concat,  String_Concat, String_Concat),
   Instance(C_Str,   String_C_Str),
- // Instance(Format,  String_Format_To, String_Format_From),
+  Instance(Format,  String_Format_To, String_Format_From),
   Instance(Show,    String_Show, String_Look));
 

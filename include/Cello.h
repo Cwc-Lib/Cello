@@ -150,20 +150,13 @@ typedef void* var;
   CELLO_ALLOC_HEADER       \
   CELLO_MAGIC_HEADER       \
   CELLO_CACHE_HEADER       \
-  NULL, (void*)"__Name",(void*)#T,  \
-  NULL, (void*)"__Size",   (var)S,  \
+  NULL, "__Name",     #T,  \
+  NULL, "__Size", (var)S,  \
   ##__VA_ARGS__,           \
   NULL, NULL, NULL}) +     \
   sizeof(struct Header))
 
-  
 #define Instance(I, ...) NULL, #I, &((struct I){__VA_ARGS__})
- 
-/*
-#define Instance(I, CInst) NULL, #I, CInst
-//#define CInstance(I, ...)  ((struct I){__VA_ARGS__})
-#define CInstance(I, ...)  const struct I test = {__VA_ARGS__};
-*/
 
 /* Types */
 
@@ -554,21 +547,8 @@ void dealloc(var self);
 void dealloc_raw(var self);
 void dealloc_root(var self);
 
-//temp disable stack alloc (for test)
-//#define $(T, ...) ((struct T*)memcpy( alloc_stack(T), &((struct T){__VA_ARGS__}), sizeof(struct T)))
-#define $(T, ...) ((struct T*)memcpy( alloc_stack(T), &"aaaaaaaaaaaaaaaa", sizeof(struct T)))
-
-
-//temp (for test)
-//#define $(T, ...) ((struct T*)new_with(T, (        tuple_in(_, ##__VA_ARGS__, Terminal)               )     ))
-//#define $(T, ...) ((struct T*)new_with(T,   Tuple, (var[]){ #__VA_ARGS__, Terminal })              )
-//#define $(T, ...) ((struct T*)new_with(T,     new_with(Tuple, (var[]){ _##__VA_ARGS__, Terminal }) )              )
-
-
-//#define $(T, ...) (struct T*)new_with(T, tuple(__VA_ARGS__))
-//#define $(T, ...) (struct T*)new_with(T,  (var[]){ #__VA_ARGS__ }) 
-
-
+#define $(T, ...) ((struct T*)memcpy( \
+  alloc_stack(T), &((struct T){__VA_ARGS__}), sizeof(struct T)))
 
 #define $I(X) $(Int, X)
 #define $F(X) $(Float, X)
@@ -579,7 +559,6 @@ void dealloc_root(var self);
 #define tuple(...) tuple_xp(tuple_in, (_, ##__VA_ARGS__, Terminal))
 #define tuple_xp(X, A) X A
 #define tuple_in(_, ...) $(Tuple, (var[]){ __VA_ARGS__ })
-//#define tuple_in(_, ...) ((struct T*)new_with(Tuple, (var[]){ #__VA_ARGS__ }))
 
 #define construct(self, ...) construct_with(self, tuple(__VA_ARGS__))
 var construct_with(var self, var args);
@@ -740,8 +719,7 @@ void unlock(var self);
 
 #define try { jmp_buf __env; exception_try(&__env); if (!setjmp(__env))
 
-//#define catch(...) catch_xp(catch_in, (__VA_ARGS__))
-#define catch(...) else { }}
+#define catch(...) catch_xp(catch_in, (__VA_ARGS__))
 #define catch_xp(X, A) X A
 #define catch_in(X, ...) else { exception_try_fail(); } exception_try_end(); } \
   for (var X = exception_catch(tuple(__VA_ARGS__)); \

@@ -1,9 +1,0 @@
-;Register Cwc before using a .cwmake
->
--{_sOpt}="O3"
--{vLib}= -nodefaultlibs  -nostdlib   -nostartfiles -lDbghelp   -lmsvcrt 
->
--#Run Build_Cpp.cwc -{_wToolchain}= VLianceTool/CpcDosRT[NoStdLib]
-
-
- 

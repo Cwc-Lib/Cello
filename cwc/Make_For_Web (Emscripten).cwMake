@@ -1,7 +1,7 @@
 ;Register Cwc before using a .cwmake
 >
--{_sOpt}="OS"
-;-{_sOpt}="Debug"
+;-{_sOpt}="OS"
+-{_sOpt}="Debug"
 -{dFlags}=-DCELLO_EMSC -DCELLO_NDEBUG -DCELLO_NSTRACE -DCELLO_NGC
 >
 -{_sDynamic}="so"

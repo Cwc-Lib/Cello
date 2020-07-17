@@ -1,9 +1,0 @@
-;Register Cwc before using a .cwmake
->
--{_sOpt}="Debug"
--{dFlags}=-DCELLO_NDEBUG -DCELLO_NGC
--{vLib}= -nodefaultlibs  -nostdlib   -nostartfiles  -lmsvcrt  -lDbghelp -luser32  -lgdi32 -lkernel32
->
--{_sDynamic}="dll"
->
--#Run Build_Test.cwc -{_wToolchain}= VLianceTool/CpcDosRT[NoStdLib]
